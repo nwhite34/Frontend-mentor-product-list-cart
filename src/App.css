@@ -1,0 +1,443 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Red Hat Text', sans-serif;
+  overflow: hidden;
+  background-color: #f9f7f4;
+}
+
+body {
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1rem;
+  max-width: 1200px;
+  width: 100%;
+  height: 90vh;
+  background-color: #f9f7f4;
+  border-radius: 8px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+}
+
+.container::-webkit-scrollbar {
+  display: none;
+}
+
+.ParentDiv {
+  width: 72%;
+  margin-right: 2%;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f9f7f4;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  text-align: left;
+  height: 380px; /* Fixed height to prevent growth */
+  box-sizing: border-box; /* Ensure padding is included in height */
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  flex-grow: 1; /* Allow the image container to take up available space */
+}
+
+.ProductImg {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.add-to-cart {
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: whitesmoke;
+  border: 1px solid #A07855;
+  padding: 8px 16px;
+  border-radius: 99px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: bold;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  color: black;
+  width: 160px;
+  height: 48px;
+  display: flex;
+  justify-content: center; /* Center the text and icon horizontally */
+  align-items: center; /* Center the text and icon vertically */
+  font-family: 'Red Hat Text', sans-serif;
+  transition: background-color 0.3s ease, font-size 0.3s ease;
+}
+
+.add-to-cart svg {
+  margin-right: 8px; /* Adds space between the icon and the text */
+  display: flex;
+  align-items: center; /* Centers the icon vertically */
+  justify-content: center; /* Centers the icon horizontally */
+}
+
+.add-to-cart span {
+  display: flex;
+  align-items: center; /* Centers the text vertically */
+  justify-content: center; /* Centers the text horizontally */
+}
+
+
+
+.add-to-cart.active {
+  background-color: #d2691e;
+  color: white;
+  width: 160px; /* Keep the same width as the inactive state */
+  height: 48px; /* Keep the same height as the inactive state */
+  padding: 0 16px;
+  border-radius: 99px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem; /* Slightly increase font size when active */
+}
+
+.add-to-cart.active .quantity-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.add-to-cart.active .quantity-controls button {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white; /* Keep the border thickness for visibility */
+  border-radius: 50%;
+  width: 24px; /* Smaller width */
+  height: 24px; /* Smaller height */
+  font-size: 0.75rem; /* Adjust font size for smaller circles */
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0; /* Remove padding */
+}
+
+
+.add-to-cart.active .quantity-controls button:hover {
+  background-color: #b25118;
+}
+
+.add-to-cart.active .quantity {
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+
+.product-details {
+  padding: 10px;
+  text-align: left;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.product-details h3 {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+  margin: 10px 0 5px;
+}
+
+.product-details p {
+  font-size: 1rem;
+  color: #A07855;
+  margin: 5px 0;
+}
+
+.product-details .price {
+  color: #E24C4B;
+  font-weight: bold;
+}
+
+.YourCart {
+  width: 26%;
+  padding: 20px;
+  background-color: #ffffff;
+  margin-top: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  
+}
+
+.cart-empty-content{
+
+align-items: center;
+display: flex;
+justify-content: center;
+flex-direction: column;
+}
+
+.YourCart h2 {
+  color: #d2691e;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  align-self: flex-start;
+}
+
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.cart-item div {
+  flex-grow: 1; /* Allows the item details to take up available space */
+  padding-right: 10px; /* Adds some space between the text and the close button */
+}
+
+.cart-item h3 {
+  font-size: 0.8rem;
+  color: #333;
+  margin: 0;
+}
+
+.cart-item p {
+  font-size: 0.875rem;
+  color: #555;
+  margin: 5px 0 0;
+}
+
+.remove-item {
+  background: none;
+  border: none;
+  color: #d2691e;
+  font-size: 1.25rem;
+  cursor: pointer;
+  flex-shrink: 0; /* Prevents the button from shrinking */
+  margin-left: 10px; /* Consistent spacing */
+}
+
+.order-summary {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.order{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+}
+
+.order-summary p {
+  font-size: 1rem;
+  color: #333;
+  margin: 0 0 5px;
+}
+
+.order-summary h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin: 5px 0 15px;
+}
+
+.confirm-order {
+  background-color: #d2691e;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  text-align: center;
+}
+
+.confirm-order:hover {
+  background-color: #b25118;
+}
+
+/* Carbon-neutral delivery section */
+.carbon-neutral {
+  background-color: #f5f5f5;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 10px;
+  font-size: 0.875rem;
+  color: #555;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.carbon-neutral img {
+  width: 20px;
+  margin-right: 5px;
+}
+
+
+
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 30px;
+  width: 450px;
+  max-width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: left;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: left;
+  margin-bottom: 15px;
+}
+
+.confirm-icon {
+  width: 48px;
+  height: 48px;
+}
+
+.confirm-title {
+  color: #3D2510;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 5px 0 10px 0;
+}
+
+.confirm-message {
+  color: #5A2C08;
+  margin: 0 0 20px 0;
+  font-size: 1rem;
+}
+
+.cart-items {
+  background-color: #fdf3f1;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.cart-item:last-child {
+  border-bottom: none;
+}
+
+.item-left {
+  display: flex;
+  align-items: center;
+}
+
+.product-img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-right: 15px;
+}
+
+.item-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-name {
+  font-weight: bold;
+  margin: 0;
+}
+
+.item-quantity-price {
+  color: #A07855;
+  margin: 0;
+}
+
+.item-total {
+  text-align: right;
+}
+
+.item-total-price {
+  font-weight: bold;
+  color: #5A2C08;
+}
+
+.order-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #5A2C08;
+}
+
+.total-amount {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.start-new-order {
+  margin-top: 20px;
+  padding: 15px 20px;
+  background-color: #C73B0F;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+}
+
+.start-new-order:hover {
+  background-color: #a32b0d;
+}
