@@ -68,7 +68,10 @@ function MainPage() {
         <div className="grid-container">
           {data.map((item, index) => (
             <div key={index} className="grid-item">
-              <div className="image-container">
+              <div 
+                className={`image-container ${activeProduct === item.name ? 'active' : ''}`}
+                onClick={() => handleAddToCart(item)} /* Make the image clickable */
+              >
                 <img 
                   className="ProductImg" 
                   src={item.image.desktop} 
@@ -76,7 +79,10 @@ function MainPage() {
                 />
                 <button 
                   className={`add-to-cart ${activeProduct === item.name ? 'active' : ''}`}
-                  onClick={() => handleAddToCart(item)}
+                  onClick={(e) => { 
+                    e.stopPropagation(); /* Prevents click on image from triggering button event */
+                    handleAddToCart(item);
+                  }}
                 >
                   {activeProduct === item.name ? (
                     <div className="quantity-controls">
@@ -124,15 +130,15 @@ function MainPage() {
               <div key={cartItem.name} className="cart-item">
                 <div className="cart-item-details">
                   <h3 className="cart-item-name">{cartItem.name}</h3>
-                  <p>{cartItem.quantity}x @ ${cartItem.price.toFixed(2)} = ${(cartItem.price * cartItem.quantity).toFixed(2)}</p>
+                  <p><span className="red-text">{cartItem.quantity}</span>x @ ${cartItem.price.toFixed(2)} = ${(cartItem.price * cartItem.quantity).toFixed(2)}</p>
                 </div>
                 <button className="remove-item" onClick={() => handleRemoveFromCart(cartItem.name)}>×</button>
               </div>
             ))}
             <div className="order-summary">
               <div className="order">
-              <p>Order Total</p>
-              <h3>${totalAmount.toFixed(2)}</h3>
+                <p>Order Total</p>
+                <h3>${totalAmount.toFixed(2)}</h3>
               </div>
               <div className="carbon-neutral">
                 <img src="/assets/images/icon-carbon-neutral.svg" alt="Carbon Neutral" />

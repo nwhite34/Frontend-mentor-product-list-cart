@@ -1,3 +1,4 @@
+/* General Body and Container */
 html, body {
   height: 100%;
   margin: 0;
@@ -37,6 +38,15 @@ body {
   margin-right: 2%;
 }
 
+/* Red Text Color for Quantities in Cart Items */
+.red-text {
+  color: hsl(14, 86%, 42%);
+  font-weight: bold;
+  font-size: 1rem;
+  margin-right: 5px; /* Adds space between the 'x' and number */
+}
+
+/* Grid Layout for Products */
 .grid-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -57,26 +67,41 @@ body {
   box-sizing: border-box; /* Ensure padding is included in height */
 }
 
+/* Image container styling */
 .image-container {
   position: relative;
   width: 100%;
-  flex-grow: 1; /* Allow the image container to take up available space */
+  flex-grow: 1;
+  height: 260px; /* Adjust this height as per your design */
+  padding: 0; /* Remove padding from the container */
+  box-sizing: border-box;
+  cursor: pointer; /* Make image clickable */
 }
 
-.ProductImg {
+/* Add the border to the image when active */
+.image-container img {
   width: 100%;
-  height: 250px;
+  height: 100%;
   object-fit: cover;
   border-radius: 12px;
+  transition: transform 0.3s ease, border 0.3s ease; /* Smooth transition for hover effects */
+  box-sizing: border-box;
 }
 
+/* Active image container with Red border */
+.image-container.active img {
+  border: 5px solid hsl(14, 86%, 42%); /* Red border for active state */
+  border-radius: 12px; /* Ensuring the border has rounded corners */
+}
+
+/* Add-to-cart button */
 .add-to-cart {
   position: absolute;
   bottom: -15px;
   left: 50%;
   transform: translateX(-50%);
   background-color: whitesmoke;
-  border: 1px solid #A07855;
+  border: 2px solid hsl(7, 20%, 60%); /* Rose 400 border color */
   padding: 8px 16px;
   border-radius: 99px;
   cursor: pointer;
@@ -87,38 +112,33 @@ body {
   width: 160px;
   height: 48px;
   display: flex;
-  justify-content: center; /* Center the text and icon horizontally */
-  align-items: center; /* Center the text and icon vertically */
+  justify-content: center;
+  align-items: center;
   font-family: 'Red Hat Text', sans-serif;
-  transition: background-color 0.3s ease, font-size 0.3s ease;
+  transition: border-color 0.3s ease, font-size 0.3s ease;
 }
 
-.add-to-cart svg {
-  margin-right: 8px; /* Adds space between the icon and the text */
-  display: flex;
-  align-items: center; /* Centers the icon vertically */
-  justify-content: center; /* Centers the icon horizontally */
+/* Hover effect: border remains Rose 400 */
+.add-to-cart:hover {
+  border-color: hsl(7, 20%, 60%); /* Ensure border color stays Rose 400 on hover */
 }
 
-.add-to-cart span {
-  display: flex;
-  align-items: center; /* Centers the text vertically */
-  justify-content: center; /* Centers the text horizontally */
+.add-to-cart:focus {
+  outline: none; /* Removes the default blue outline */
+  border-color: hsl(7, 20%, 60%); /* Keep the Rose 400 border color on focus */
 }
-
-
 
 .add-to-cart.active {
-  background-color: #d2691e;
+  background-color: hsl(14, 86%, 42%); /* Red background for active state */
   color: white;
-  width: 160px; /* Keep the same width as the inactive state */
-  height: 48px; /* Keep the same height as the inactive state */
+  width: 160px;
+  height: 48px;
   padding: 0 16px;
   border-radius: 99px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 0.9rem; /* Slightly increase font size when active */
+  font-size: 0.9rem;
 }
 
 .add-to-cart.active .quantity-controls {
@@ -131,22 +151,20 @@ body {
 .add-to-cart.active .quantity-controls button {
   background-color: transparent;
   color: white;
-  border: 2px solid white; /* Keep the border thickness for visibility */
+  border: 2px solid hsl(14, 86%, 42%); /* Red border for quantity controls */
   border-radius: 50%;
-  width: 24px; /* Smaller width */
-  height: 24px; /* Smaller height */
-  font-size: 0.75rem; /* Adjust font size for smaller circles */
+  width: 24px;
+  height: 24px;
+  font-size: 0.75rem;
   font-weight: bold;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0; /* Remove padding */
 }
 
-
 .add-to-cart.active .quantity-controls button:hover {
-  background-color: #b25118;
+  background-color: hsl(14, 86%, 42%); /* Red background on hover */
 }
 
 .add-to-cart.active .quantity {
@@ -155,7 +173,21 @@ body {
   font-weight: bold;
 }
 
+/* Center the shopping cart icon with the text */
+.add-to-cart svg {
+  margin-right: 8px; /* Add some space between the icon and the text */
+  display: flex;
+  align-items: center; /* Center the icon vertically */
+  justify-content: center; /* Center the icon horizontally */
+}
 
+.add-to-cart span {
+  display: flex;
+  align-items: center; /* Center the text vertically */
+  justify-content: center; /* Center the text horizontally */
+}
+
+/* Product Details */
 .product-details {
   padding: 10px;
   text-align: left;
@@ -181,6 +213,7 @@ body {
   font-weight: bold;
 }
 
+/* Cart Layout */
 .YourCart {
   width: 26%;
   padding: 20px;
@@ -188,24 +221,36 @@ body {
   margin-top: 20px;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  
 }
 
-.cart-empty-content{
-
-align-items: center;
-display: flex;
-justify-content: center;
-flex-direction: column;
+.cart-empty-content {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
+/* Empty cart text */
+.cart-empty-content p {
+  color: hsl(12, 20%, 44%); /* Rose 500 color */
+  font-size: 1rem; /* Adjust font size if needed */
+  font-weight: normal; /* Adjust font weight if needed */
+  margin-top: 15px;
+  text-align: center; /* Center the text */
+  font-family: 'Red Hat Text', sans-serif;
+}
+
+/* Update "Your Cart" header to Red */
 .YourCart h2 {
-  color: #d2691e;
+  color: hsl(14, 86%, 42%); /* Red color */
   font-size: 1.5rem;
   margin-bottom: 10px;
   align-self: flex-start;
 }
 
+.YourCart h2 span {
+  color: inherit; /* Keeps the span the same color as the text */
+}
 
 .cart-item {
   display: flex;
@@ -217,8 +262,8 @@ flex-direction: column;
 }
 
 .cart-item div {
-  flex-grow: 1; /* Allows the item details to take up available space */
-  padding-right: 10px; /* Adds some space between the text and the close button */
+  flex-grow: 1;
+  padding-right: 10px;
 }
 
 .cart-item h3 {
@@ -233,22 +278,29 @@ flex-direction: column;
   margin: 5px 0 0;
 }
 
+/* Quantity below "Your Cart" should be red */
+.cart-item p .red-text {
+  color: hsl(14, 86%, 42%);
+  font-weight: bold;
+}
+
 .remove-item {
   background: none;
   border: none;
   color: #d2691e;
   font-size: 1.25rem;
   cursor: pointer;
-  flex-shrink: 0; /* Prevents the button from shrinking */
-  margin-left: 10px; /* Consistent spacing */
+  flex-shrink: 0;
+  margin-left: 10px;
 }
 
+/* Order Summary */
 .order-summary {
   margin-top: 20px;
   text-align: center;
 }
 
-.order{
+.order {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
@@ -267,8 +319,9 @@ flex-direction: column;
   margin: 5px 0 15px;
 }
 
+/* Update "Confirm Order" button to Red */
 .confirm-order {
-  background-color: #d2691e;
+  background-color: hsl(14, 86%, 42%);
   color: white;
   padding: 10px 20px;
   border-radius: 50px;
@@ -283,7 +336,7 @@ flex-direction: column;
   background-color: #b25118;
 }
 
-/* Carbon-neutral delivery section */
+/* Carbon Neutral Section */
 .carbon-neutral {
   background-color: #f5f5f5;
   padding: 10px;
@@ -302,9 +355,7 @@ flex-direction: column;
   margin-right: 5px;
 }
 
-
-
-
+/* Modal Styling */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -363,14 +414,6 @@ flex-direction: column;
   overflow-y: auto;
 }
 
-.cart-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 0;
-  border-bottom: 1px solid #ddd;
-}
-
 .cart-item:last-child {
   border-bottom: none;
 }
@@ -399,8 +442,9 @@ flex-direction: column;
 }
 
 .item-quantity-price {
-  color: #A07855;
+  color: hsl(14, 86%, 42%);
   margin: 0;
+  font-weight: bold;
 }
 
 .item-total {
@@ -424,10 +468,11 @@ flex-direction: column;
   font-weight: bold;
 }
 
+/* Update "Start New Order" button to Red */
 .start-new-order {
   margin-top: 20px;
   padding: 15px 20px;
-  background-color: #C73B0F;
+  background-color: hsl(14, 86%, 42%);
   color: white;
   border: none;
   border-radius: 50px;
@@ -439,5 +484,5 @@ flex-direction: column;
 }
 
 .start-new-order:hover {
-  background-color: #a32b0d;
+  background-color: #b25118;
 }

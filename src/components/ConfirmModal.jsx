@@ -28,7 +28,7 @@ function ConfirmModal({ cartItems, totalAmount, onClose }) {
                 <div className="item-info">
                   <p className="item-name">{item.name}</p>
                   <p className="item-quantity-price">
-                    {item.quantity}x @ ${item.price.toFixed(2)}
+                    <span className="red-text">{item.quantity}</span>x @ ${item.price.toFixed(2)}
                   </p>
                 </div>
               </div>
@@ -40,7 +40,6 @@ function ConfirmModal({ cartItems, totalAmount, onClose }) {
             </div>
           ))}
 
-          {/* Order Total within the cart-items section */}
           <div className="order-total">
             <p>Order Total</p>
             <p className="total-amount">${totalAmount.toFixed(2)}</p>
