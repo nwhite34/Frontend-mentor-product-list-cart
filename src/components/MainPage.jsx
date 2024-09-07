@@ -141,9 +141,11 @@ function MainPage() {
                 <h3>${totalAmount.toFixed(2)}</h3>
               </div>
               <div className="carbon-neutral">
-                <img src="/assets/images/icon-carbon-neutral.svg" alt="Carbon Neutral" />
-                <h4>This order is carbon neutral</h4>
-              </div>
+  <img src="/assets/images/icon-carbon-neutral.svg" alt="Carbon Neutral" />
+  <span>This is a <span className="highlight">carbon-neutral</span> delivery</span>
+</div>
+
+
               <button className="confirm-order" onClick={handleConfirmOrder}>Confirm Order</button>
             </div>
           </>

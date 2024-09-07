@@ -97,7 +97,7 @@ body {
 /* Add-to-cart button */
 .add-to-cart {
   position: absolute;
-  bottom: -15px;
+  bottom: -22px;
   left: 50%;
   transform: translateX(-50%);
   background-color: whitesmoke;
@@ -118,10 +118,13 @@ body {
   transition: border-color 0.3s ease, font-size 0.3s ease;
 }
 
-/* Hover effect: border remains Rose 400 */
+/* Hover effect: Change to white background and red text */
 .add-to-cart:hover {
-  border-color: hsl(7, 20%, 60%); /* Ensure border color stays Rose 400 on hover */
+  background-color: white; 
+  color:  hsl(14, 86%, 42%); /* White text on hover */
+  border-color: hsl(14, 86%, 42%); /* Red border remains */
 }
+
 
 .add-to-cart:focus {
   outline: none; /* Removes the default blue outline */
@@ -147,31 +150,53 @@ body {
   justify-content: space-between;
   width: 100%;
 }
-
+/* Style for the minus and plus buttons */
 .add-to-cart.active .quantity-controls button {
   background-color: transparent;
   color: white;
-  border: 2px solid hsl(14, 86%, 42%); /* Red border for quantity controls */
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  font-size: 0.75rem;
+  border: 2px solid white; /* White border for button */
+  border-radius: 50%; /* Make it a perfect circle */
+  width: 30px; /* Slightly larger circle for better centering */
+  height: 30px; /* Keep width and height the same for a perfect circle */
+  font-size: 1.2rem; /* Adjust size of the plus and minus symbols */
   font-weight: bold;
+  line-height: 1; /* Helps to center the minus symbol */
+  text-align: center; /* Ensures text is centered within the button */
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0; /* Remove extra padding */
+  box-sizing: border-box; /* Ensure the border and size play well together */
+  transition: all 0.3s ease; /* Smooth hover transition */
+  
 }
 
+/* Hover state */
 .add-to-cart.active .quantity-controls button:hover {
-  background-color: hsl(14, 86%, 42%); /* Red background on hover */
+  background-color: white; /* White background on hover */
+  color: hsl(14, 86%, 42%); /* Red icon on hover */
+  border: 2px solid white; /* Keep the white border */
 }
 
-.add-to-cart.active .quantity {
-  color: white;
-  font-size: 1rem;
-  font-weight: bold;
+/* Remove black border on click */
+.add-to-cart.active .quantity-controls button:focus {
+  outline: none; /* Remove the outline */
+  border: 2px solid white; /* Keep white border */
 }
+
+/* Style for the quantity number */
+.add-to-cart.active .quantity {
+  margin: 0 15px; /* Add space between buttons */
+  font-size: 1.2rem; /* Slightly larger font size for the number */
+  color: white; /* Keep the number white */
+  font-family: 'Red Hat Text', sans-serif;
+}
+
+
+
+
+
 
 /* Center the shopping cart icon with the text */
 .add-to-cart svg {
@@ -201,6 +226,8 @@ body {
   color: #333;
   margin: 10px 0 5px;
 }
+
+
 
 .product-details p {
   font-size: 1rem;
@@ -284,15 +311,44 @@ body {
   font-weight: bold;
 }
 
+/* Style for the remove item button (cross icon) */
 .remove-item {
-  background: none;
-  border: none;
-  color: #d2691e;
-  font-size: 1.25rem;
+  color: #B29088; /* Match the color of the cross icon */
+  border-radius: 50%; /* Perfect circle */
+  width: 24px; /* Slightly smaller button width */
+  height: 24px; /* Same height as width */
+  font-size: 1.2rem; /* Slightly smaller size for the cross icon */
+  font-weight: bold;
+  line-height: 1; /* Helps to center the cross symbol */
+  text-align: center; /* Ensures text is centered within the button */
   cursor: pointer;
-  flex-shrink: 0;
-  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0; /* Remove extra padding */
+  box-sizing: border-box; /* Ensure the border and size play well together */
+  transition: all 0.3s ease; /* Smooth hover transition */
+  border: 2px solid #B29088; /* Match the border color */
+  background-color: transparent; /* No background color */
 }
+
+/* Hover state for the remove item button */
+.remove-item:hover {
+  color: black; /* Darken the cross on hover */
+  border: 2px solid black; /* Black border on hover */
+}
+
+/* Focus state for when the button is clicked */
+.remove-item:focus {
+  background-color: black; /* Black background when clicked */
+  color: white; /* White cross on click */
+  border: 2px solid black; /* Black border on click */
+  outline: none; /* Removes default browser outline */
+  box-shadow: none; /* Removes any focus shadow */
+}
+
+
+
 
 /* Order Summary */
 .order-summary {
@@ -339,21 +395,35 @@ body {
 /* Carbon Neutral Section */
 .carbon-neutral {
   background-color: #f5f5f5;
-  padding: 10px;
+  padding: 10px 20px; /* Adding padding on the sides */
   border-radius: 8px;
   margin-top: 10px;
-  font-size: 0.875rem;
-  color: #555;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  font-size: 0.75rem; /* Smaller font size */
+  color: #333;
+  display: flex; /* Align text and image in a single line */
+  align-items: center; /* Vertically center the icon and text */
+  justify-content: center; /* Center the content horizontally */
+  white-space: nowrap; /* Prevent line breaks */
   margin-bottom: 24px;
+  font-weight: 400; /* Regular weight for default text */
+  width: 100%; /* Ensuring the section spans the width */
+  box-sizing: border-box; /* To ensure padding is accounted for in the total width */
 }
 
-.carbon-neutral img {
-  width: 20px;
-  margin-right: 5px;
+/* Bold and darker style for "carbon-neutral" part */
+.carbon-neutral .highlight {
+  font-weight: bold;
+  color: #1C0F0A; /* Darker color for bold text */
 }
+
+/* Icon next to the text */
+.carbon-neutral img {
+  width: 16px; /* Smaller icon */
+  height: auto;
+  margin-right: 8px; /* Space between the icon and the text */
+}
+
+
 
 /* Modal Styling */
 .modal-overlay {
@@ -485,4 +555,14 @@ body {
 
 .start-new-order:hover {
   background-color: #b25118;
+}
+
+.confirm-order:focus {
+  background-color: #b25118; /* Maintain the hover background color on focus */
+  outline: none; /* Remove the focus outline */
+}
+
+.start-new-order:focus {
+  background-color: #b25118; /* Maintain the hover background color on focus */
+  outline: none; /* Remove the focus outline */
 }
