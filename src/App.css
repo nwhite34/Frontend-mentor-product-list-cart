@@ -125,7 +125,6 @@ body {
   border-color: hsl(14, 86%, 42%); /* Red border remains */
 }
 
-
 .add-to-cart:focus {
   outline: none; /* Removes the default blue outline */
   border-color: hsl(7, 20%, 60%); /* Keep the Rose 400 border color on focus */
@@ -150,7 +149,7 @@ body {
   justify-content: space-between;
   width: 100%;
 }
-/* Style for the minus and plus buttons */
+
 .add-to-cart.active .quantity-controls button {
   background-color: transparent;
   color: white;
@@ -169,7 +168,6 @@ body {
   padding: 0; /* Remove extra padding */
   box-sizing: border-box; /* Ensure the border and size play well together */
   transition: all 0.3s ease; /* Smooth hover transition */
-  
 }
 
 /* Hover state */
@@ -192,11 +190,6 @@ body {
   color: white; /* Keep the number white */
   font-family: 'Red Hat Text', sans-serif;
 }
-
-
-
-
-
 
 /* Center the shopping cart icon with the text */
 .add-to-cart svg {
@@ -227,8 +220,6 @@ body {
   margin: 10px 0 5px;
 }
 
-
-
 .product-details p {
   font-size: 1rem;
   color: #A07855;
@@ -257,26 +248,24 @@ body {
   flex-direction: column;
 }
 
-/* Empty cart text */
 .cart-empty-content p {
-  color: hsl(12, 20%, 44%); /* Rose 500 color */
-  font-size: 1rem; /* Adjust font size if needed */
-  font-weight: normal; /* Adjust font weight if needed */
+  color: hsl(12, 20%, 44%);
+  font-size: 1rem;
+  font-weight: normal;
   margin-top: 15px;
-  text-align: center; /* Center the text */
+  text-align: center;
   font-family: 'Red Hat Text', sans-serif;
 }
 
-/* Update "Your Cart" header to Red */
 .YourCart h2 {
-  color: hsl(14, 86%, 42%); /* Red color */
+  color: hsl(14, 86%, 42%);
   font-size: 1.5rem;
   margin-bottom: 10px;
   align-self: flex-start;
 }
 
 .YourCart h2 span {
-  color: inherit; /* Keeps the span the same color as the text */
+  color: inherit;
 }
 
 .cart-item {
@@ -305,50 +294,43 @@ body {
   margin: 5px 0 0;
 }
 
-/* Quantity below "Your Cart" should be red */
 .cart-item p .red-text {
   color: hsl(14, 86%, 42%);
   font-weight: bold;
 }
 
-/* Style for the remove item button (cross icon) */
 .remove-item {
-  color: #B29088; /* Match the color of the cross icon */
-  border-radius: 50%; /* Perfect circle */
-  width: 24px; /* Slightly smaller button width */
-  height: 24px; /* Same height as width */
-  font-size: 1.2rem; /* Slightly smaller size for the cross icon */
+  color: #B29088;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  font-size: 1.2rem;
   font-weight: bold;
-  line-height: 1; /* Helps to center the cross symbol */
-  text-align: center; /* Ensures text is centered within the button */
+  line-height: 1;
+  text-align: center;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0; /* Remove extra padding */
-  box-sizing: border-box; /* Ensure the border and size play well together */
-  transition: all 0.3s ease; /* Smooth hover transition */
-  border: 2px solid #B29088; /* Match the border color */
-  background-color: transparent; /* No background color */
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  border: 2px solid #B29088;
+  background-color: transparent;
 }
 
-/* Hover state for the remove item button */
 .remove-item:hover {
-  color: black; /* Darken the cross on hover */
-  border: 2px solid black; /* Black border on hover */
+  color: black;
+  border: 2px solid black;
 }
 
-/* Focus state for when the button is clicked */
 .remove-item:focus {
-  background-color: black; /* Black background when clicked */
-  color: white; /* White cross on click */
-  border: 2px solid black; /* Black border on click */
-  outline: none; /* Removes default browser outline */
-  box-shadow: none; /* Removes any focus shadow */
+  background-color: black;
+  color: white;
+  border: 2px solid black;
+  outline: none;
+  box-shadow: none;
 }
-
-
-
 
 /* Order Summary */
 .order-summary {
@@ -395,35 +377,31 @@ body {
 /* Carbon Neutral Section */
 .carbon-neutral {
   background-color: #f5f5f5;
-  padding: 10px 20px; /* Adding padding on the sides */
+  padding: 10px 20px;
   border-radius: 8px;
   margin-top: 10px;
-  font-size: 0.75rem; /* Smaller font size */
+  font-size: 0.75rem;
   color: #333;
-  display: flex; /* Align text and image in a single line */
-  align-items: center; /* Vertically center the icon and text */
-  justify-content: center; /* Center the content horizontally */
-  white-space: nowrap; /* Prevent line breaks */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
   margin-bottom: 24px;
-  font-weight: 400; /* Regular weight for default text */
-  width: 100%; /* Ensuring the section spans the width */
-  box-sizing: border-box; /* To ensure padding is accounted for in the total width */
+  font-weight: 400;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-/* Bold and darker style for "carbon-neutral" part */
 .carbon-neutral .highlight {
   font-weight: bold;
-  color: #1C0F0A; /* Darker color for bold text */
+  color: #1C0F0A;
 }
 
-/* Icon next to the text */
 .carbon-neutral img {
-  width: 16px; /* Smaller icon */
+  width: 16px;
   height: auto;
-  margin-right: 8px; /* Space between the icon and the text */
+  margin-right: 8px;
 }
-
-
 
 /* Modal Styling */
 .modal-overlay {
@@ -538,7 +516,6 @@ body {
   font-weight: bold;
 }
 
-/* Update "Start New Order" button to Red */
 .start-new-order {
   margin-top: 20px;
   padding: 15px 20px;
@@ -557,12 +534,155 @@ body {
   background-color: #b25118;
 }
 
-.confirm-order:focus {
-  background-color: #b25118; /* Maintain the hover background color on focus */
-  outline: none; /* Remove the focus outline */
+.confirm-order:focus, .start-new-order:focus {
+  background-color: #b25118;
+  outline: none;
 }
+/* Media query for mobile devices */
+@media (max-width: 913px) {
 
-.start-new-order:focus {
-  background-color: #b25118; /* Maintain the hover background color on focus */
-  outline: none; /* Remove the focus outline */
+  html, body {
+    height: auto; /* Allow height to grow with content */
+    display: block; /* Allow vertical stacking for body content */
+    margin: 0;
+    padding: 0;
+    overflow-y: auto; /* Enable vertical scrolling */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    background-color: #f9f7f4;
+  }
+
+  .heading{
+  
+    margin-right: auto;
+  }
+
+  .container {
+    flex-direction: column;
+    justify-content: flex-start; /* Prevent centering if content overflows */
+    align-items: center;
+    width: 100%;  /* Full width on mobile */
+    padding: 0;
+    height: auto; /* Allow the container to grow with content */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+  }
+
+  .ParentDiv {
+    width: 100%; /* Full width on mobile */
+    margin-right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1rem; /* Padding for mobile */
+    height: auto; /* Allow the div to grow with content */
+  }
+
+  .YourCart {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: auto; /* Allow the cart to adjust its height */
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr; /* Single column layout */
+    gap: 20px;
+    width: 100%; /* Full width */
+    height: auto; /* Allow the grid to grow based on content */
+  }
+
+  .grid-item {
+    width: 100%; /* Full width on mobile */
+    max-width: 100%; /* Prevent overflow */
+    height: auto; /* Allow items to grow in height based on content */
+  }
+
+  .modal {
+    text-align: center;
+    max-width: 100%; /* Make sure the modal doesn't exceed the viewport */
+    height: auto; /* Adjust height based on content */
+  }
+
+  .modal-header, .confirm-title, .confirm-message, .order-total {
+    justify-content: center; /* Center modal content */
+  }
+
+  .order {
+    flex-direction: column;
+    align-items: center;
+    height: auto; /* Ensure the order section grows with content */
+  }
+}
+/* Media query for tablet devices */
+@media (min-width: 914px) and (max-width: 1262px) {
+
+  html, body {
+    height: auto; /* Allow height to grow with content */
+    display: block; /* Allow vertical stacking for body content */
+    margin: 0;
+    padding: 0;
+    overflow-y: auto; /* Enable vertical scrolling */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    background-color: #f9f7f4;
+  }
+
+  .heading{
+  
+    margin-right: auto;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column; /* Stack sections vertically */
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 10px; /* Reduce padding for better fit */
+    width: 100%;
+    max-width: 960px; /* Set a max width to fit within the tablet screen */
+    height: auto; /* Allow container to grow based on content */
+    overflow-y: auto; /* Enable vertical scrolling */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    box-sizing: border-box; /* Ensure padding is respected */
+  }
+
+  .ParentDiv {
+    width: 100%; /* Make the parent container full width */
+    margin-bottom: 20px; /* Add margin for spacing */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Ensure the grid has 3 columns for tablet view */
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr); /* Maintain 3-column layout */
+    gap: 15px; /* Adjust gap between grid items */
+    width: 100%;
+    margin-bottom: 20px; /* Add margin below the grid */
+    box-sizing: border-box; /* Ensure padding is respected */
+  }
+
+  .grid-item {
+    width: 100%;
+    height: auto;
+    max-width: 100%; /* Prevent overflow */
+  }
+
+  /* Cart section to be full-width below the grid */
+  .YourCart {
+    width: 100%;
+    margin-top: 20px;
+    padding: 20px;
+    height: auto;
+    box-sizing: border-box;
+    background-color: white; /* Cart background */
+    border-radius: 8px; /* Add a rounded border */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+
+  header {
+    width: 100%;
+    padding: 10px 0;
+    box-sizing: border-box;
+  }
+
 }
