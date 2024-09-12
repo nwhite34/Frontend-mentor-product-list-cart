@@ -551,8 +551,7 @@ body {
     background-color: #f9f7f4;
   }
 
-  .heading{
-  
+  .heading {
     margin-right: auto;
   }
 
@@ -560,7 +559,7 @@ body {
     flex-direction: column;
     justify-content: flex-start; /* Prevent centering if content overflows */
     align-items: center;
-    width: 100%;  /* Full width on mobile */
+    width: 100%; /* Full width on mobile */
     padding: 0;
     height: auto; /* Allow the container to grow with content */
     overflow-x: hidden; /* Prevent horizontal scrolling */
@@ -595,23 +594,8 @@ body {
     max-width: 100%; /* Prevent overflow */
     height: auto; /* Allow items to grow in height based on content */
   }
-
-  .modal {
-    text-align: center;
-    max-width: 100%; /* Make sure the modal doesn't exceed the viewport */
-    height: auto; /* Adjust height based on content */
-  }
-
-  .modal-header, .confirm-title, .confirm-message, .order-total {
-    justify-content: center; /* Center modal content */
-  }
-
-  .order {
-    flex-direction: column;
-    align-items: center;
-    height: auto; /* Ensure the order section grows with content */
-  }
 }
+
 /* Media query for tablet devices */
 @media (min-width: 914px) and (max-width: 1262px) {
 
@@ -625,8 +609,7 @@ body {
     background-color: #f9f7f4;
   }
 
-  .heading{
-  
+  .heading {
     margin-right: auto;
   }
 
@@ -665,6 +648,30 @@ body {
     width: 100%;
     height: auto;
     max-width: 100%; /* Prevent overflow */
+  }
+
+  .modal {
+    width: 80%;  /* Scale modal for tablet */
+    max-width: 80%;  /* Maintain responsiveness */
+    padding: 25px;  /* Adjust padding for tablet */
+  }
+
+  .confirm-title {
+    font-size: 1.75rem;  /* Adjust font size for tablet */
+  }
+
+  .confirm-message {
+    font-size: 1rem;  /* Keep a readable font size */
+  }
+
+  .cart-items {
+    padding: 12px;  /* Adjust padding for tablets */
+    max-height: 250px;  /* Adjust cart item height for tablets */
+  }
+
+  .start-new-order {
+    padding: 12px 18px;  /* Adjust button padding for tablet */
+    font-size: 0.9rem;  /* Adjust button font size for tablet */
   }
 
   /* Cart section to be full-width below the grid */
